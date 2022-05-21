@@ -14,8 +14,9 @@ extern "C" {
 }
 
 #[wasm_bindgen]
-pub fn greet() {
-    alert("Hello, wasm-game-of-life!");
+pub fn greet(arg_from_js: &str) {
+    use web_sys::console;
 
-    alert("hello from rust wasm!!!!!!!!");
+    // alert(&format!("Hello, {}", arg_from_js));
+    console::log_1(&format!("Hello, {}!", arg_from_js).into());
 }
